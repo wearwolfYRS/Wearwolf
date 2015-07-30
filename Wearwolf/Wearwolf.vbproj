@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{412CA055-6B61-405D-8C94-BF026583D9D7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Wearwolf.My.MyApplication</StartupObject>
+    <RootNamespace>Wearwolf</RootNamespace>
+    <AssemblyName>Wearwolf</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Wearwolf.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Wearwolf.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="All Outfits.Designer.vb">
+      <DependentUpon>All Outfits.vb</DependentUpon>
+    </Compile>
+    <Compile Include="All Outfits.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CityDetails.vb" />
+    <Compile Include="Create Account Page.Designer.vb">
+      <DependentUpon>Create Account Page.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Create Account Page.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add Outfits.Designer.vb">
+      <DependentUpon>Add Outfits.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Add Outfits.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Favourite Outfits.Designer.vb">
+      <DependentUpon>Favourite Outfits.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Favourite Outfits.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Opening Page.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Opening Page.Designer.vb">
+      <DependentUpon>Opening Page.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu Page.Designer.vb">
+      <DependentUpon>Menu Page.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Menu Page.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Search Page.Designer.vb">
+      <DependentUpon>Search Page.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Search Page.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sign In Page.Designer.vb">
+      <DependentUpon>Sign In Page.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Sign In Page.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Suggestions.Designer.vb">
+      <DependentUpon>Suggestions.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Suggestions.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wearwolf_AccountsDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Wearwolf_AccountsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Wearwolf_AccountsDataSet.vb">
+      <DependentUpon>Wearwolf_AccountsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Wish List.Designer.vb">
+      <DependentUpon>Wish List.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Wish List.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="All Outfits.resx">
+      <DependentUpon>All Outfits.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Create Account Page.resx">
+      <DependentUpon>Create Account Page.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add Outfits.resx">
+      <DependentUpon>Add Outfits.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Favourite Outfits.resx">
+      <DependentUpon>Favourite Outfits.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Opening Page.resx">
+      <DependentUpon>Opening Page.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu Page.resx">
+      <DependentUpon>Menu Page.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search Page.resx">
+      <DependentUpon>Search Page.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sign In Page.resx">
+      <DependentUpon>Sign In Page.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Suggestions.resx">
+      <DependentUpon>Suggestions.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wish List.resx">
+      <DependentUpon>Wish List.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="Wearwolf_AccountsDataSet.xsc">
+      <DependentUpon>Wearwolf_AccountsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Wearwolf_AccountsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Wearwolf_AccountsDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Wearwolf_AccountsDataSet.xss">
+      <DependentUpon>Wearwolf_AccountsDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Wearwolf Accounts.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
