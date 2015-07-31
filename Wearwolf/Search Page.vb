@@ -57,64 +57,74 @@ Public Class Search_Page
             End If
             ChanceOfSnow = weather.Contains("snow")
         End If
+
         For x = 0 To 100
             selected(x) = 0
         Next
+
         match = False
         occasion = comboOccasion.Text
         season = comboSeason.Text
         fileReader = New StreamReader("ImageNo.txt")
         imagenum = Int(fileReader.ReadLine())
         fileReader.Close()
-
         y = 0
+
         For x = 1 To imagenum
             filename = x & "imageinfo.txt"
-            fileReader = New StreamReader(filename)
-            occasionfile = fileReader.ReadLine()
-            seasonfile = fileReader.ReadLine()
-            weatherfile = fileReader.ReadLine()
-            rainsuitable = weatherfile.Contains("Rain")
-            If ChanceOfRain = True And weatherfile = "All" Then
-                rainsuitable = True
-            ElseIf ChanceOfRain = False Then
-                rainsuitable = False
-            End If
-            ''''''''''''''
-            If rainsuitable = ChanceOfRain Then
-                match = True
-            End If
-            ''''''''''''
-            If weatherfile.Contains("Heat") And tempcelcius > 23 Then
-                tempsuitable = True
-            ElseIf weatherfile.Contains("Cold") And tempcelcius <= 23 Then
-                tempsuitable = True
-            Else
-                match = False
-            End If
-            '''''''''
-            If season = "All" Then
-                seasonfile = "All"
-            End If
-            ''''''''
-            If seasonfile = "All" Then
-                season = "All"
-            End If
-            If occasionfile = occasion And seasonfile = season And match = True And tempsuitable = True Then
-                selected(y) = x
-                highestnum = y
-                y = y + 1
+            If File.Exists(filename) = True Then
+                fileReader = New StreamReader(filename)
+                occasionfile = fileReader.ReadLine()
+                seasonfile = fileReader.ReadLine()
+                weatherfile = fileReader.ReadLine()
+                rainsuitable = weatherfile.Contains("Rain")
+                If ChanceOfRain = True And weatherfile = "All" Then
+                    rainsuitable = True
+                ElseIf ChanceOfRain = False Then
+                    rainsuitable = False
+                End If
+                ''''''''''''''
+                If rainsuitable = ChanceOfRain Then
+                    match = True
+                End If
+                ''''''''''''
+                If weatherfile.Contains("Heat") And tempcelcius > 23 Then
+                    tempsuitable = True
+                ElseIf weatherfile.Contains("Cold") And tempcelcius <= 23 Then
+                    tempsuitable = True
+                Else
+                    match = False
+                End If
+                '''''''''
+                If season = "All" Then
+                    seasonfile = "All"
+                End If
+                ''''''''
+                If seasonfile = "All" Then
+                    season = "All"
+                End If
+                If occasionfile = occasion And seasonfile = season And match = True And tempsuitable = True Then
+                    selected(y) = x
+                    highestnum = y
+                    y = y + 1
+                End If
+
+                If selected(0) = 0 Then
+                    MsgBox("Sorry, there are no outfits avaliable for these criteria")
+                Else
+                    filename = selected(0) & "image.jpg"
+                    Dim stream As New FileStream(filename, FileMode.Open)
+                    Dim image As Image = image.FromStream(stream)
+                    pictureboxOutfit.Image = image
+                    stream.Close()
+                    Me.pictureboxOutfit.SizeMode = PictureBoxSizeMode.StretchImage ' making it the correct size for the picture box
+                End If
+
+                y = 0
+
             End If
         Next
-        If selected(0) = 0 Then
-            MsgBox("Sorry, there are no outfits avaliable for these criteria")
-        Else
-            filename = selected(0) & "image.jpg"
-            pictureboxOutfit.Image = Image.FromFile(filename)
-            Me.pictureboxOutfit.SizeMode = PictureBoxSizeMode.StretchImage ' making it the correct size for the picture box
-        End If
-        
-        y = 0
+
     End Sub
 
     Private Sub btnNextOutfit_Click(sender As Object, e As EventArgs) Handles btnNextOutfit.Click

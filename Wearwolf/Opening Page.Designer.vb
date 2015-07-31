@@ -58,9 +58,9 @@ Partial Class opening
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), System.Drawing.Image)
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox1.Location = New System.Drawing.Point(184, 116)
+        Me.PictureBox1.Location = New System.Drawing.Point(171, 117)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(151, 131)
+        Me.PictureBox1.Size = New System.Drawing.Size(177, 131)
         Me.PictureBox1.TabIndex = 3
         Me.PictureBox1.TabStop = False
         '
@@ -71,7 +71,7 @@ Partial Class opening
         Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PictureBox2.Location = New System.Drawing.Point(51, 12)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(412, 56)
+        Me.PictureBox2.Size = New System.Drawing.Size(412, 82)
         Me.PictureBox2.TabIndex = 4
         Me.PictureBox2.TabStop = False
         '

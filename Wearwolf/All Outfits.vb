@@ -3,6 +3,7 @@ Public Class All_Outfits
     Dim fileReader As StreamReader
     Dim fileWriter As StreamWriter
     Dim imagenum, currentnum, linetotal As Integer
+    Dim infofilename, deletednum As String
     Dim filename As String
     Dim MenuPage As Menu_Page
 
@@ -11,20 +12,36 @@ Public Class All_Outfits
         imagenum = Int(fileReader.ReadLine())
         fileReader.Close()
         currentnum = 1
-        filename = currentnum & "Image.jpg"
-        pictureboxAll.Image = Image.FromFile(filename)
+        filename = currentnum & "image.jpg"
+        Do Until File.Exists(filename) = True
+            currentnum = currentnum + 1
+            filename = currentnum & "Image.jpg"
+        Loop
+        Dim stream As New FileStream(filename, FileMode.Open)
+        Dim image As Image = image.FromStream(stream)
+        pictureboxAll.Image = image
+        stream.Close()
+        ' pictureboxAll.Image = Image.FromFile(filename)
         Me.pictureboxAll.SizeMode = PictureBoxSizeMode.StretchImage ' making it the correct size for the picture box
     End Sub
 
     Private Sub btnNextAll_Click(sender As Object, e As EventArgs) Handles btnNextAll.Click
         currentnum = currentnum + 1
+        filename = currentnum & "image.jpg"
         If currentnum > imagenum Then
             MsgBox("End of outfits")
             currentnum = 1
         End If
-        filename = currentnum & "Image.jpg"
-        pictureboxAll.Image = Image.FromFile(filename)
+        Do Until File.Exists(filename) = True
+            currentnum = currentnum + 1
+            filename = currentnum & "Image.jpg"
+        Loop
+        Dim stream As New FileStream(filename, FileMode.Open)
+        Dim image As Image = image.FromStream(stream)
+        pictureboxAll.Image = image
+        stream.Close()
         Me.pictureboxAll.SizeMode = PictureBoxSizeMode.StretchImage ' making it the correct size for the picture box
+
 
     End Sub
 
@@ -35,17 +52,31 @@ Public Class All_Outfits
     End Sub
 
     Private Sub btnDeleteAll_Click(sender As Object, e As EventArgs) Handles btnDeleteAll.Click
-
+        filename = currentnum & "image.jpg"
+        infofilename = currentnum & "imageinfo.txt"
+        Dim stream As New FileStream(filename, FileMode.Open)
+        Dim image As Image = image.FromStream(stream)
+        pictureboxAll.Image = image
+        stream.Close()
+        File.Delete(filename)
+        File.Delete(infofilename)
+        pictureboxAll.Image = Nothing
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnPrevious.Click
         currentnum = currentnum - 1
-        If currentnum < 1 Then
-            currentnum = imagenum
-        End If
-
-        filename = currentnum & "Image.jpg"
-        pictureboxAll.Image = Image.FromFile(filename)
+        filename = currentnum & "image.jpg"
+        Do Until File.Exists(filename) = True
+            currentnum = currentnum - 1
+            If currentnum < 1 Then
+                currentnum = imagenum
+            End If
+            filename = currentnum & "image.jpg"
+        Loop
+        Dim stream As New FileStream(filename, FileMode.Open)
+        Dim image As Image = image.FromStream(stream)
+        pictureboxAll.Image = image
+        stream.Close()
         Me.pictureboxAll.SizeMode = PictureBoxSizeMode.StretchImage ' making it the correct size for the picture box
     End Sub
 

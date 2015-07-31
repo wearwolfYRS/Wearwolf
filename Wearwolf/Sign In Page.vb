@@ -27,4 +27,6 @@
     Private Sub txtPasswordKnown_TextChanged(sender As Object, e As EventArgs) Handles txtPasswordKnown.TextChanged
 
     End Sub
+
+
 End Class
